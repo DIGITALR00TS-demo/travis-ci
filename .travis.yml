@@ -1,7 +1,5 @@
 dist: trusty
 language: python
-python:
-- '3.6'
 stages:
   - compile
   - test
@@ -12,7 +10,7 @@ jobs:
     - stage: compile
       script:
       - echo "compileing?"
+    - script: echo "Ordered dict???"
     - stage: test
       script:
       - echo "Testing"
-    - script: echo "OVERIDE ???"
