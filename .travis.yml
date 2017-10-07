@@ -5,10 +5,14 @@ stages:
   - test
   - name: deploy
     if: branch = master
+env:
+  - distro=alpine
+  - distro=ubuntu
 jobs:
   include:
     - stage: compile
       script:
+      - echo 'warming up'
       - echo "compileing?"
     - script: echo "Ordered dict???"
     - stage: test
