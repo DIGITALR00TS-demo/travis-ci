@@ -1,0 +1,19 @@
+dist: trusty
+language: python
+python:
+- '2.7'
+- '3.3'
+- pypy
+#stages:
+#  - compile
+#  - test
+#  - name: deploy
+#    if: branch = master
+jobs:
+  include:
+    - stage: 'stage 1'
+      script:
+      - echo "SCRIPT in stage 1"
+    - stage: test
+      script:
+      - echo "Testing"
