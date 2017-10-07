@@ -2,7 +2,7 @@ dist: trusty
 language: python
 stages:
   #- compile
-  #- test
+  - test
   - name: deploy
     if: branch = master
 env:
