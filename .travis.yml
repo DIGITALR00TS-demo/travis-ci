@@ -10,10 +10,12 @@ env:
   - distro=ubuntu
 
 script:
-  - echo ${distro}
+  - echo $distro
 jobs:
   include:
     - stage: deploy
+      env:
+        - distro=all
       script:
         - echo 'warming up'
         - echo "compileing?"
