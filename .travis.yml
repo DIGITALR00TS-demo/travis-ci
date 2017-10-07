@@ -1,20 +1,19 @@
 dist: trusty
 language: python
 stages:
-  - compile
-  - test
+  #- compile
+  #- test
   - name: deploy
     if: branch = master
+env:
+  - distro=alpine
+  - distro=ubuntu
+
+script:
+  - echo ${distro}
 jobs:
   include:
-    - stage: compile
-      env:
-        - distro=alpine
-        - distro=ubuntu
+    - stage: deploy
       script:
         - echo 'warming up'
         - echo "compileing?"
-    #- script: echo "Ordered dict???"
-    - stage: test
-      script:
-      - echo "Testing"
